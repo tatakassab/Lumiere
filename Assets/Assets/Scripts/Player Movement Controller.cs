@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovementController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float speed;
-    public float jump_height;
+    [SerializeField] InputController inputs;
+    [SerializeField] float speed;
+    [SerializeField] float jump_height;
+
+    private Rigidbody2D rb;  
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,18 +18,23 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnEnable()
     {
-        InputController.jump.performed += jump;
+        inputs.RegisterToJump(jump);
     }
 
     private void OnDisable()
     {
-        InputController.jump.performed -= jump;
+        inputs.UnregisterFromJump(jump);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate() 
     {
-        rb.linearVelocityX = InputController.move.ReadValue<Vector2>().x*speed;
+        move(inputs);
+    }
+
+    void move(IInputAxisController axis)
+    {
+        rb.linearVelocityX = axis.GetMoveReading().x * speed;
     }
 
     void jump(InputAction.CallbackContext context)
