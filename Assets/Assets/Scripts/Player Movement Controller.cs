@@ -14,11 +14,12 @@ public class PlayerMovementController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        inputs.RegisterToJump(jump);
     }
 
     private void OnEnable()
     {
-        inputs.RegisterToJump(jump);
+        //inputs.RegisterToJump(jump);
     }
 
     private void OnDisable()
