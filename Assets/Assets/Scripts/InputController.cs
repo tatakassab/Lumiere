@@ -20,24 +20,28 @@ public class InputController : MonoBehaviour, IInputRegistrationManager, IInputA
     InputSystem_Actions Actions;
     InputAction move;
     InputAction jump;
+    InputAction switchLight;
 
     private void Awake()
     {
         Actions = new InputSystem_Actions();
         move = Actions.Player.Move;
         jump = Actions.Player.Jump;
+        switchLight = Actions.Player.Light;
     }
 
     private void OnEnable()
     {
         move.Enable();
         jump.Enable();
+        switchLight.Enable();
     }
 
     private void OnDisable()
     {
         move.Disable();
         jump.Disable();
+        switchLight.Disable();
     }
 
     public void RegisterToJump(Action<InputAction.CallbackContext> action)
@@ -49,6 +53,18 @@ public class InputController : MonoBehaviour, IInputRegistrationManager, IInputA
     {
         jump.performed -= action;
     }
+
+
+    public void RegisterToLight(Action<InputAction.CallbackContext> action)
+    {
+        switchLight.performed += action;
+    }
+
+    public void UnregisterFromLight(Action<InputAction.CallbackContext> action)
+    {
+        switchLight.performed -= action;
+    }
+
 
     public Vector2 GetMoveReading() => move.ReadValue<Vector2>();
 
