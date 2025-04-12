@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 12103ead740f147518986e9dd8830133
+guid: 3ab1cf83c57abe4449d002e07ce6197c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5935140737195161668
-    second: Light Reflection_590x389_0
+      213: -6531429506156146080
+    second: Level 2_0
+  - first:
+      213: 6906114179015987827
+    second: Level 2_1
+  - first:
+      213: -3258766151829788236
+    second: Level 2_2
+  - first:
+      213: 4716062324935648690
+    second: Level 2_3
+  - first:
+      213: -6565080075793852836
+    second: Level 2_4
+  - first:
+      213: -7740067895642184824
+    second: Level 2_5
+  - first:
+      213: -5036269575508867671
+    second: Level 2_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +131,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Light Reflection_590x389_0
+      name: Level 2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 2448
-        height: 1574
+        x: 12
+        y: 0
+        width: 4610
+        height: 1933
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 448b7740e0bdd5250800000000000000
-      internalID: 5935140737195161668
+      spriteID: 062de0a1873bb55a0800000000000000
+      internalID: -6531429506156146080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2_6
+      rect:
+        serializedVersion: 2
+        x: 5261
+        y: 0
+        width: 2417
+        height: 1933
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5cfae11839b1ab0800000000000000
+      internalID: -5036269575508867671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2_1
+      rect:
+        serializedVersion: 2
+        x: 4633
+        y: 0
+        width: 614
+        height: 903
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16bf1a542bbea104a9293c0c8dd112dd
+      internalID: 1446045677
       vertices: []
       indices: 
       edges: []
@@ -138,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 159c1c5c714e2844ca2a008d91e5e275
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +210,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Light Reflection_590x389_0: 5935140737195161668
+      Level 2_1: 1446045677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
