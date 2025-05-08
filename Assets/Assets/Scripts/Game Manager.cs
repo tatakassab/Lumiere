@@ -50,5 +50,6 @@ public class GameManager : MonoBehaviour
     private void LoadEndScreen()
     {
         SceneManager.LoadScene("You Lose");
+        currentLives = maxLives;
     }
 }
