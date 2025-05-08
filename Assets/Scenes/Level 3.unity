@@ -202,14 +202,6 @@ PrefabInstance:
       propertyPath: inputs
       value: 
       objectReference: {fileID: 657616904}
-    - target: {fileID: 798224558243886349, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
-      propertyPath: groundBoxSize.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 798224558243886349, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
-      propertyPath: goundBoxCastDistance
-      value: 0.58
-      objectReference: {fileID: 0}
     - target: {fileID: 1001601451494019727, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
       propertyPath: m_Name
       value: Player
