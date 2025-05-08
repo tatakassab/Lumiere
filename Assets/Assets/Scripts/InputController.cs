@@ -54,6 +54,11 @@ public class InputController : MonoBehaviour, IInputRegistrationManager, IInputA
         jump.performed -= action;
     }
 
+    public bool IsStillJumping()
+    {
+        return jump.IsPressed();
+    }
+
 
     public void RegisterToLight(Action<InputAction.CallbackContext> action)
     {

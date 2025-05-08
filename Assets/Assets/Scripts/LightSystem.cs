@@ -1,39 +1,76 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class LightSystem : MonoBehaviour
 {
-    //intellisense
-    [SerializeField] GameObject light;
-    [SerializeField] InputController input;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] float maxEnergy = 100f;
+    [SerializeField] float energyConsumptionRate = 5f;
+    [SerializeField] float lightMinIntensity = 0f;
+    [SerializeField] float lightMaxIntensity = 1f;
+    [SerializeField] Slider UILight;
+    [SerializeField] Light2D playerLight;
+    private float currentEnergy;
+
+    private void Start()
     {
-        input.RegisterToLight(switchLight);
+        playerLight = GetComponentInChildren<Light2D>();
+        currentEnergy = maxEnergy;
+        UpdateEnergyBar();
     }
 
-    void OnEnable()
+    private void Update()
     {
-        //input.RegisterToLight(switchLight);
+        ConsumeEnergy();
+        UpdateLightIntensity();
+        UpdateEnergyBar();
+        CheckForDeath();
     }
 
-    void OnDisable()
+    private void ConsumeEnergy()
     {
-        input.UnregisterFromLight(switchLight);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void switchLight(InputAction.CallbackContext context){
-        if(light.activeInHierarchy){
-            light.SetActive(false);
+        if (currentEnergy > 0)
+        {
+            currentEnergy -= energyConsumptionRate * Time.deltaTime;
+            currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
         }
-        else{
-            light.SetActive(true);
+    }
+
+    private void UpdateLightIntensity()
+    {
+        if (playerLight != null)
+        {
+            float normalizedEnergy = currentEnergy / maxEnergy;
+            playerLight.intensity = Mathf.Lerp(lightMinIntensity, lightMaxIntensity, normalizedEnergy);
         }
+    }
+
+    private void UpdateEnergyBar()
+    {
+        if (UILight != null)
+        {
+            UILight.value = currentEnergy;
+        }
+    }
+
+    public bool ChangeEnergy(float amount)
+    {
+        if(currentEnergy == 0)
+        {
+            return false;
+        }
+        currentEnergy += amount;
+        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
+        UpdateEnergyBar();
+        return true;
+    }
+
+    private void CheckForDeath()
+    { 
+        if (currentEnergy == 0)
+        {
+            GameManager.instance.PlayerDied();
+        } 
     }
 }
