@@ -280,11 +280,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
-  acceleration: 20
-  deceleration: 20
+  acceleration: 40
+  deceleration: 40
   jumpForce: 5
   maxInitialJumpTime: 0.25
-  airControl: 2.5
+  airControl: 5
   groundBoxSize: {x: 0.5, y: 0.1}
   groundBoxOffset: {x: 0.2, y: 0}
   goundBoxCastDistance: 0.58
