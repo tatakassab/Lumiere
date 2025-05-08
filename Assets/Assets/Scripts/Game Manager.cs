@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerFinishedLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int b = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(b);
     }
 
     private void ReloadLevel()

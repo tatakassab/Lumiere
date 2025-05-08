@@ -26,7 +26,7 @@ public class RisingJumpPlayerState : IPlayerState
 
     public void UpdateState()
     {
-        if(rb.linearVelocityY < 0)
+        if(rb.linearVelocityY <= 0)
         {
             player.TransitionToState(new FallingPlayerState(player));
             return;

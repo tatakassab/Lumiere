@@ -27,12 +27,6 @@ public class IdlePlayerState : IPlayerState
             return;
         }
 
-        if (rb.linearVelocityY > 0)
-        {
-            player.TransitionToState(new RisingJumpPlayerState(player));
-            return;
-        }
-
         if (inputs.GetMoveReading().x != 0)
         {
             player.TransitionToState(new AcceleratingMovementPlayerState(player));
