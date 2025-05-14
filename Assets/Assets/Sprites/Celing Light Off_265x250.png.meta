@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Celing Light Off_265x250_0: 6055969799656415017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

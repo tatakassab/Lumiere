@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ceiling Light Off Off_265x250_0: 4750614390143168276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
