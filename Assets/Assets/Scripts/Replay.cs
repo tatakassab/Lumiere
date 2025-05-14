@@ -5,6 +5,6 @@ public class Replay : MonoBehaviour
 {
     public void replay()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
 }
