@@ -7,12 +7,14 @@ public class FallingPlayerState: IPlayerState
     private Rigidbody2D rb;
     private PlayerStateMachine player;
     private float maxFallSpeed;
+    private AudioClip gruntSound;
     public FallingPlayerState(PlayerStateMachine player)
     {
         this.player = player;
         inputs = player.GetInputController();
         rb = player.GetRigidbody();
         maxFallSpeed = player.GetMaxSpeed();
+        gruntSound = player.GetGruntSound();
     }
     public void EnterState() { }
     public void UpdateState()
@@ -28,5 +30,7 @@ public class FallingPlayerState: IPlayerState
             rb.linearVelocityY = -maxFallSpeed;
         }
     }
-    public void ExitState() { }
+    public void ExitState() {
+        player.PlaySound(gruntSound);
+    }
 }

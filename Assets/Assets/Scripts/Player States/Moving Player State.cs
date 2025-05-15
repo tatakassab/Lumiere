@@ -8,6 +8,8 @@ public class MovingPlayerState : IPlayerState
     private Rigidbody2D rb;
     private PlayerStateMachine player;
     private bool direction;
+    private AudioClip movingSound;
+    private AudioSource movingSource;
 
     public MovingPlayerState(PlayerStateMachine player)
     {
@@ -15,12 +17,17 @@ public class MovingPlayerState : IPlayerState
         inputs = player.GetInputController();
         rb = player.GetRigidbody();
         maxSpeed = player.GetMaxSpeed();
+        movingSound = player.GetMovingSound();
+        movingSource = player.GetAudioSource();
     }
 
     public void EnterState()
     {
         inputs.RegisterToJump(jump);
         direction = rb.linearVelocityX > 0;
+        movingSource.loop = true;
+        movingSource.clip = movingSound;
+        movingSource.Play();
     }
 
     public void UpdateState()
@@ -64,6 +71,9 @@ public class MovingPlayerState : IPlayerState
 
     public void ExitState()
     {
+        movingSource.loop = false;
+        movingSource.clip = null;
+        movingSource.Stop();
         inputs.UnregisterFromJump(jump);
     }
 }

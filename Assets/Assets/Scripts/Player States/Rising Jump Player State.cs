@@ -7,16 +7,20 @@ public class RisingJumpPlayerState : IPlayerState
     private Rigidbody2D rb;
     private PlayerStateMachine player;
     private float airSpeed;
+    private float speed;
+    private AudioClip jumpSound;
     public RisingJumpPlayerState(PlayerStateMachine player)
     {
         this.player = player;
         inputs = player.GetInputController();
         rb = player.GetRigidbody();
         airSpeed = player.GetAirControl();
+        speed = player.GetMaxSpeed();
+        jumpSound = player.GetJumpingSound();
     }
     public void EnterState()
     {
-        
+        player.PlaySound(jumpSound);
     }
 
     public void ExitState()
@@ -32,13 +36,13 @@ public class RisingJumpPlayerState : IPlayerState
             return;
         }
 
-        if (inputs.GetMoveReading().x < 0 && rb.linearVelocityX <= 1)
+        if (inputs.GetMoveReading().x < 0)
         {
-            rb.linearVelocityX = math.min(-airSpeed, rb.linearVelocityX);
+            rb.linearVelocityX = math.max(-speed, rb.linearVelocityX - airSpeed * Time.deltaTime);
         }
-        else if (inputs.GetMoveReading().x > 0 && rb.linearVelocityX >= -1)
+        else if (inputs.GetMoveReading().x > 0) //&& rb.linearVelocityX >= -1)
         {
-            rb.linearVelocityX = math.max(airSpeed, rb.linearVelocityX);
+            rb.linearVelocityX = math.min(speed, rb.linearVelocityX + airSpeed * Time.deltaTime);
         }
     }
 }

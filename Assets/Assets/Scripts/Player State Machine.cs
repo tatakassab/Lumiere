@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent (typeof(AudioSource))]
 public class PlayerStateMachine : MonoBehaviour
 {
     private IPlayerState currentState;
@@ -15,11 +16,16 @@ public class PlayerStateMachine : MonoBehaviour
     [SerializeField] float goundBoxCastDistance;
     [SerializeField] LayerMask groundMask;
     [SerializeField] InputController inputs;
+    [SerializeField] AudioClip movingSound;
+    [SerializeField] AudioClip jumpingSound;
+    [SerializeField] AudioClip gruntSound;
     private Rigidbody2D rb;
+    private AudioSource audioSource;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         TransitionToState(new IdlePlayerState(this));
     }
 
@@ -39,6 +45,12 @@ public class PlayerStateMachine : MonoBehaviour
         currentState.EnterState();
     }
 
+    public void PlaySound(AudioClip clip)
+    {
+        if (clip == null) return;
+        audioSource.PlayOneShot(clip);
+    }
+
     public float GetMaxSpeed() => maxSpeed;
     public float GetAcceleration() => acceleration;
     public float GetDeceleration() => deceleration;
@@ -47,6 +59,10 @@ public class PlayerStateMachine : MonoBehaviour
     public float GetAirControl() => airControl;
     public InputController GetInputController() => inputs;
     public Rigidbody2D GetRigidbody() => rb;
+    public AudioClip GetMovingSound() => movingSound;
+    public AudioClip GetJumpingSound() => jumpingSound;
+    public AudioClip GetGruntSound() => gruntSound;
+    public AudioSource GetAudioSource() => audioSource;
 
     public bool IsGrounded()
     {
