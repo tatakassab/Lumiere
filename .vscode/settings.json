@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Lumiere.sln"
+    "dotnet.defaultSolution": "S4.sln"
 }

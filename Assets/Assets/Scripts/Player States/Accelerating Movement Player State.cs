@@ -39,6 +39,8 @@ public class AcceleratingMovementPlayerState: IPlayerState
             return;
         }
 
+        
+
         if ((rb.linearVelocityX < maxSpeed && inputs.GetMoveReading().x > 0) || (rb.linearVelocityX > -maxSpeed && inputs.GetMoveReading().x < 0))
         {
             rb.linearVelocityX = rb.linearVelocityX + inputs.GetMoveReading().x * acceleration * Time.deltaTime;

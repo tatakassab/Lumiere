@@ -6,6 +6,18 @@ using UnityEngine;
 [RequireComponent (typeof(SpriteRenderer))]
 public class PlayerStateMachine : MonoBehaviour
 {
+    // Code review : 
+    // Create a scriptable object class for AccelerationConfig.
+    // This class would contain : 
+    // acceleration
+    // deceleration
+    // maxSpeed
+
+    // JumpState : 
+    // Make a scriptableObject that has a JumpConfig.
+    // It would contain : 
+    // jumpForce
+    // maxInitialJumpTime
     private IPlayerState currentState;
     [SerializeField] float maxSpeed;
     [SerializeField] float acceleration;
@@ -26,6 +38,14 @@ public class PlayerStateMachine : MonoBehaviour
     private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
 
+    // CharacterVisuals could reference all visuals (animator, sprite renderer)
+    // and offer a public API.
+    // Also, it could have a flip function. 
+
+    // Create a private bool for is grounded,
+    // Run the code to updatr it in fixed update.
+    // Return the proivate variable in yourt public accessor
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,10 +55,14 @@ public class PlayerStateMachine : MonoBehaviour
         TransitionToState(new IdlePlayerState(this));
     }
 
+    // Code review : add a fixed update to your states.
+    // This is where you will run acceleration calculations
+    // and this is where you will set the velocity
+
     private void Update()
     {
         currentState.UpdateState();
-        if(rb.linearVelocityX > 0)
+        if (rb.linearVelocityX > 0)
         {
             spriteRenderer.flipX = false;
         }

@@ -9,7 +9,7 @@ public class LightCharger : MonoBehaviour
     private bool charging = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(TagHandles.PLAYER_TAG))
         {
             playerLight = collision.GetComponent<LightSystem>();
             input.RegisterToInteract(StartCharging);
@@ -22,7 +22,7 @@ public class LightCharger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(TagHandles.PLAYER_TAG))
         {
             playerLight = null;
             input.UnregisterFromInteract(StartCharging);
