@@ -117,7 +117,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.075, y: 0.075, z: 0.075}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 28056862777208350}
@@ -239,17 +239,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -3.7752342, y: 0.037368774}
+  m_Offset: {x: -0.19341755, y: 0.037368774}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.33268934, y: 0.48915446}
     oldSize: {x: 16.18, y: 14.860904}
     newSize: {x: 7.37, y: 17.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.809673, y: 14.910004}
+  m_Size: {x: 8.665457, y: 14.910004}
   m_EdgeRadius: 0
 --- !u!114 &2953389624571598392
 MonoBehaviour:
@@ -288,13 +288,13 @@ MonoBehaviour:
   maxInitialJumpTime: 0.25
   airControl: 100
   groundBoxSize: {x: 0.5, y: 0.1}
-  groundBoxOffset: {x: 0.28, y: 0.16}
-  goundBoxCastDistance: 0.58
+  groundBoxOffset: {x: 0, y: 0.16}
+  goundBoxCastDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 8
   inputs: {fileID: 0}
-  movingSound: {fileID: 0}
+  movingSound: {fileID: 8300000, guid: 14b44fe0fba5640efaa47269085e5ff3, type: 3}
   jumpingSound: {fileID: 0}
   gruntSound: {fileID: 0}
 --- !u!82 &3784497113386744026

@@ -266,6 +266,22 @@ PrefabInstance:
       propertyPath: UILight
       value: 
       objectReference: {fileID: 719612213}
+    - target: {fileID: 3784497113386744026, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
+      propertyPath: m_Pitch
+      value: 2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784497113386744026, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784497113386744026, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 14b44fe0fba5640efaa47269085e5ff3, type: 3}
+    - target: {fileID: 3784497113386744026, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 14b44fe0fba5640efaa47269085e5ff3, type: 3}
     - target: {fileID: 6951099511578682770, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.304037
@@ -2549,6 +2565,10 @@ PrefabInstance:
     - target: {fileID: 2319817946430396297, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507774220248547946, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8367336914592647657, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
       propertyPath: m_Name
