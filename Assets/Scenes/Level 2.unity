@@ -1648,6 +1648,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 540207748308168376, guid: 049b8366cb90917429ae27131dc79038, type: 3}
+      propertyPath: input
+      value: 
+      objectReference: {fileID: 657616904}
     - target: {fileID: 5018556457886627856, guid: 049b8366cb90917429ae27131dc79038, type: 3}
       propertyPath: m_Name
       value: Light Charger (1)
