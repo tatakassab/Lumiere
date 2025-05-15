@@ -10,6 +10,7 @@ public class MovingPlayerState : IPlayerState
     private bool direction;
     private AudioClip movingSound;
     private AudioSource movingSource;
+    private Animator _animator;
 
     public MovingPlayerState(PlayerStateMachine player)
     {
@@ -19,6 +20,7 @@ public class MovingPlayerState : IPlayerState
         maxSpeed = player.GetMaxSpeed();
         movingSound = player.GetMovingSound();
         movingSource = player.GetAudioSource();
+        _animator = player.GetAnimator();
     }
 
     public void EnterState()
@@ -28,6 +30,7 @@ public class MovingPlayerState : IPlayerState
         movingSource.loop = true;
         movingSource.clip = movingSound;
         movingSource.Play();
+        _animator.SetBool("isRunning", true);
     }
 
     public void UpdateState()
@@ -75,5 +78,6 @@ public class MovingPlayerState : IPlayerState
         movingSource.clip = null;
         movingSource.Stop();
         inputs.UnregisterFromJump(jump);
+        _animator.SetBool("isRunning", false);
     }
 }

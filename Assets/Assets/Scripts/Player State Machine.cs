@@ -2,6 +2,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent (typeof(AudioSource))]
+[RequireComponent (typeof(Animator))]
+[RequireComponent (typeof(SpriteRenderer))]
 public class PlayerStateMachine : MonoBehaviour
 {
     private IPlayerState currentState;
@@ -19,19 +21,31 @@ public class PlayerStateMachine : MonoBehaviour
     [SerializeField] AudioClip movingSound;
     [SerializeField] AudioClip jumpingSound;
     [SerializeField] AudioClip gruntSound;
+    private Animator _animator;
     private Rigidbody2D rb;
     private AudioSource audioSource;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        _animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         TransitionToState(new IdlePlayerState(this));
     }
 
     private void Update()
     {
         currentState.UpdateState();
+        if(rb.linearVelocityX > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (rb.linearVelocityX < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     public void TransitionToState(IPlayerState newState)
@@ -63,6 +77,7 @@ public class PlayerStateMachine : MonoBehaviour
     public AudioClip GetJumpingSound() => jumpingSound;
     public AudioClip GetGruntSound() => gruntSound;
     public AudioSource GetAudioSource() => audioSource;
+    public Animator GetAnimator() => _animator;
 
     public bool IsGrounded()
     {
