@@ -259,9 +259,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 657616904}
     - target: {fileID: 798224558243886349, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
+      propertyPath: gruntSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 798224558243886349, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
       propertyPath: movingSound
       value: 
       objectReference: {fileID: 8300000, guid: 299e2fc6b1c4841c9bacabdcd54c5ee5, type: 3}
+    - target: {fileID: 798224558243886349, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
+      propertyPath: jumpingSound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1001601451494019727, guid: f37c9bfe756bfda43bcd87eb3cafdd1c, type: 3}
       propertyPath: m_Name
       value: Player
