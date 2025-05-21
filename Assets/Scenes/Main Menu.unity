@@ -1313,6 +1313,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5507774220248547946, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
+      propertyPath: m_Volume
+      value: 0.351
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507774220248547946, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: d753f993318114134bb7c4ca55dfa37d, type: 3}
+    - target: {fileID: 5507774220248547946, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d753f993318114134bb7c4ca55dfa37d, type: 3}
     - target: {fileID: 8367336914592647657, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
       propertyPath: m_Name
       value: Game Manager
