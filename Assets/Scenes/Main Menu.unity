@@ -551,7 +551,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 217592745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1933860213}
+        m_TargetAssemblyTypeName: Music, Assembly-CSharp
+        m_MethodName: OffMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &217592745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,6 +1337,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d753f993318114134bb7c4ca55dfa37d, type: 3}
+    - target: {fileID: 5507774220248547946, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8367336914592647657, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -1332,7 +1348,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367336914592647657, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1933860213}
   m_SourcePrefab: {fileID: 100100000, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
 --- !u!1 &669224885
 GameObject:
@@ -1415,7 +1434,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 669224888}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1933860213}
+        m_TargetAssemblyTypeName: Music, Assembly-CSharp
+        m_MethodName: OnMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &669224888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2181,6 +2212,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589361224}
   m_CullTransparentMesh: 1
+--- !u!1 &1933860209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367336914592647657, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
+  m_PrefabInstance: {fileID: 629470679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1933860210 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5507774220248547946, guid: 9af723c1a7cae2445a48a43e6facb1e9, type: 3}
+  m_PrefabInstance: {fileID: 629470679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1933860213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933860209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bee1130ea654245a7d216d6d3302a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 1933860210}
 --- !u!1 &1984303954
 GameObject:
   m_ObjectHideFlags: 0
